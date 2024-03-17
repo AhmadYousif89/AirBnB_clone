@@ -11,4 +11,6 @@ header .logo {
 	background-position: left;
 	margin-left: 20px;
 	height: 100%;
+	cursor: pointer;
+	max-width: 140px;
 }

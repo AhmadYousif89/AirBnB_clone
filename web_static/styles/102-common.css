@@ -55,10 +55,8 @@ svg {
 	max-width: 1000px;
 	margin-block: 30px;
 	margin-inline: auto;
-}
 
-@media (width < 1024px) {
-	.container {
+	@media (width < 1024px) {
 		margin-inline: 2rem;
 	}
 }

@@ -29,8 +29,12 @@
 	grid-row: 1;
 	grid-column: 2;
 	font-size: var(--fs-800);
-	width: 100%;
+	min-width: 100%;
 	text-align: center;
+
+	@media (width < 460px) {
+		font-size: var(--fs-700);
+	}
 }
 
 .wrapper article .price_by_night {
@@ -45,6 +49,12 @@
 	border-radius: 50%;
 	min-width: 90px;
 	height: 90px;
+
+	@media (width < 460px) {
+		font-size: var(--fs-700);
+		min-width: 75px;
+		height: 75px;
+	}
 }
 
 .wrapper article .information {
@@ -55,6 +65,10 @@
 	min-height: 90px;
 	min-width: 100%;
 	border-block: 1px solid var(--light-gray-400);
+
+	@media (width < 460px) {
+		margin-top: 65px;
+	}
 }
 
 .information :where(.max_guest, .number_rooms, .number_bathrooms) {
@@ -192,21 +206,4 @@ article .reviews ul {
 .reviews .review p {
 	max-width: 50ch;
 	font-size: var(--fs-200);
-}
-
-@media (width < 460px) {
-	.wrapper article h2 {
-		font-size: var(--fs-700);
-		min-width: 100%;
-	}
-
-	.wrapper article .information {
-		margin-top: 65px;
-	}
-
-	.wrapper article .price_by_night {
-		font-size: var(--fs-700);
-		min-width: 75px;
-		height: 75px;
-	}
 }
