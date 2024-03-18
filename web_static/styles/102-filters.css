@@ -49,7 +49,6 @@
 }
 
 .filters :where(.locations, .amenities) {
-	container-type: inline-size;
 	position: relative;
 	width: 25%;
 	height: 100%;
