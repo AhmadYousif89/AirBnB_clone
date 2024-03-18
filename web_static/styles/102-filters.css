@@ -6,6 +6,10 @@
 	display: flex;
 	align-items: center;
 	box-shadow: 1px 1px 3px var(--light-gray-400);
+
+	div:first-child {
+		border-right: 1px solid var(--light-gray-400);
+	}
 }
 
 .filters button {
@@ -21,60 +25,68 @@
 	margin-left: auto;
 	margin-right: 30px;
 
-	@media (width < 790px) {
+	&:hover {
+		opacity: 90%;
+	}
+
+	.search-icon {
+		display: none;
+	}
+
+	@media (width < 800px) {
 		width: 48px;
 		border-radius: 50%;
 		margin-right: 20px;
+
+		span {
+			display: none;
+		}
+
+		.search-icon {
+			display: block;
+		}
 	}
-}
-
-.filters button:hover {
-	opacity: 90%;
-}
-
-.filters button span {
-	@media (width < 790px) {
-		display: none;
-	}
-}
-
-.filters button .search-icon {
-	display: none;
-
-	@media (width < 790px) {
-		display: block;
-	}
-}
-
-.filters div:first-child {
-	border-right: 1px solid var(--light-gray-400);
 }
 
 .filters :where(.locations, .amenities) {
+	container-type: inline-size;
 	position: relative;
 	width: 25%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
 
-.filters :where(.locations, .amenities) h3 {
-	font-weight: 600;
-	margin-left: 40px;
-
-	@media (width < 790px) {
-		margin-left: 20px;
+	&:hover .popover {
+		display: block;
 	}
-}
 
-.filters :where(.locations, .amenities) h4 {
-	font-weight: 400;
-	margin-left: 40px;
-	font-size: var(--fs-300);
+	& h3 {
+		font-weight: 600;
+		margin-left: 40px;
+	}
 
-	@media (width < 790px) {
-		display: none;
+	& h4 {
+		font-weight: 400;
+		margin-left: 40px;
+		font-size: var(--fs-300);
+	}
+
+
+	@media (width < 800px) {
+		& h3 {
+			margin-left: 20px;
+		}
+
+		& h4 {
+			display: none;
+		}
+	}
+
+	@media (width < 400px) {
+		& h3 {
+			margin-left: 10px;
+		}
 	}
 }
 
@@ -83,44 +95,46 @@
 	position: absolute;
 	z-index: 999;
 	top: 100%;
-	min-width: 200px;
+	width: max(180px, 100%);
 	background-color: var(--light-gray-100);
 	border: 1px solid var(--light-gray-400);
 	border-radius: 0 0 4px;
 	padding: 40px 20px;
 	box-shadow: 1px 1px 3px var(--light-gray-400);
-}
 
-.filters .popover li h2 {
-	font-size: var(--fs-400);
-	margin-bottom: 10px;
+	li h2 {
+		font-size: var(--fs-400);
+		margin-bottom: 10px;
+	}
 
-	@media (width < 790px) {
-		font-size: var(--fs-300);
+	@media (width < 800px) {
+		& li h2 {
+			font-size: var(--fs-300);
+		}
 	}
 }
 
+
 .filters .amenities .popover li {
 	margin-left: 20px;
+
+	&:not(:last-child) {
+		margin-bottom: 5px;
+	}
 }
 
-.filters .amenities .popover li:not(:last-child) {
-	margin-bottom: 5px;
-}
+.filters .locations .popover li {
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
 
-.filters .locations .popover li:not(:last-child) {
-	margin-bottom: 20px;
-}
+	p {
+		cursor: pointer;
+		margin-left: 20px;
 
-.filters .locations .popover li p:not(:last-child) {
-	margin-bottom: 5px;
-}
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
 
-.filters .locations .popover li p {
-	cursor: pointer;
-	margin-left: 20px;
-}
-
-.filters :where(.locations, .amenities):hover .popover {
-	display: block;
 }
