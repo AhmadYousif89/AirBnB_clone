@@ -153,7 +153,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """Method to exit the HBNB console"""
-        exit()
+        # exit()
+        return True
 
     def help_quit(self):
         """Prints the help documentation for quit"""
